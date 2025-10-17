@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTI Service Details</title>
+    <link rel="stylesheet" href="./assets/css/dtiservice_details_style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="https://github.com/LU1ZK4M4R0VSK1/DTI-Service" target="_blank" class="github-link">DTI Service no Git</a>
+        </header>
+        <main>
+            <div class="gallery">
+                <img src="./assets/images/MainDTIService.png" alt="Main DTI Service" class="screenshot">
+                <img src="./assets/images/ImpressorasDTIService.png" alt="Impressoras DTI Service" class="screenshot">
+                <img src="./assets/images/OtimizacoesDTIService.png" alt="Otimizações DTI Service" class="screenshot">
+                <img src="./assets/images/NovoChamadoDTIService.png" alt="Novo Chamado DTI Service" class="screenshot">
+                <img src="./assets/images/AdicionarScript.png" alt="Adicionar Script DTI Service" class="screenshot">
+                <img src="./assets/images/VerGruposDTIService.png" alt="Ver Grupos DTI Service" class="screenshot">
+            </div>
+        </main>
+    </div>
+
+    <!-- The Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-button">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <a class="prev-button">&#10094;</a>
+        <a class="next-button">&#10095;</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryImages = document.querySelectorAll('.screenshot');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeButton = document.querySelector('.close-button');
+            const prevButton = document.querySelector('.prev-button');
+            const nextButton = document.querySelector('.next-button');
+            let currentImageIndex = 0;
+            let isZoomed = false;
+            let startX, startY, imgX, imgY;
+
+            function openLightbox(index) {
+                lightbox.style.display = 'flex'; // Use flex for centering
+                currentImageIndex = index;
+                lightboxImg.src = galleryImages[currentImageIndex].src;
+                resetZoom();
+            }
+
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+                resetZoom();
+            }
+
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                lightboxImg.src = galleryImages[currentImageIndex].src;
+                resetZoom();
+            }
+
+            function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                lightboxImg.src = galleryImages[currentImageIndex].src;
+                resetZoom();
+            }
+
+            function resetZoom() {
+                isZoomed = false;
+                lightboxImg.style.transform = 'scale(1) translate(0, 0)';
+                lightboxImg.style.cursor = 'zoom-in';
+            }
+
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => openLightbox(index));
+            });
+
+            closeButton.addEventListener('click', closeLightbox);
+            prevButton.addEventListener('click', showPrevImage);
+            nextButton.addEventListener('click', showNextImage);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Zoom functionality
+            lightboxImg.addEventListener('click', (e) => {
+                if (!isZoomed) {
+                    isZoomed = true;
+                    lightboxImg.style.transform = 'scale(2)'; // Zoom in by 2x
+                    lightboxImg.style.cursor = 'grab';
+                } else {
+                    resetZoom();
+                }
+            });
+
+            // Panning functionality (only when zoomed)
+            lightboxImg.addEventListener('mousedown', (e) => {
+                if (isZoomed) {
+                    e.preventDefault();
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    const transform = window.getComputedStyle(lightboxImg).transform;
+                    const matrix = new DOMMatrix(transform);
+                    imgX = matrix.m41;
+                    imgY = matrix.m42;
+
+                    const onMouseMove = (e) => {
+                        const dx = e.clientX - startX;
+                        const dy = e.clientY - startY;
+                        lightboxImg.style.transform = `scale(2) translate(${imgX + dx}px, ${imgY + dy}px)`;
+                    };
+
+                    const onMouseUp = () => {
+                        lightboxImg.removeEventListener('mousemove', onMouseMove);
+                        lightboxImg.removeEventListener('mouseup', onMouseUp);
+                    };
+
+                    lightboxImg.addEventListener('mousemove', onMouseMove);
+                    lightboxImg.addEventListener('mouseup', onMouseUp);
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.style.display === 'flex') {
+                    if (e.key === 'ArrowRight') {
+                        showNextImage();
+                    } else if (e.key === 'ArrowLeft') {
+                        showPrevImage();
+                    } else if (e.key === 'Escape') {
+                        closeLightbox();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
