@@ -1832,7 +1832,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   .avatar-box img { width: 150px; }
 
   .info-content .name {
+<<<<<<< HEAD
     white-space: normal;
+=======
+    white-space: nowrap;
+>>>>>>> 29f937ac5c174e75b9c2d0b648499104287bbc20
     text-align: center;
   }
 
