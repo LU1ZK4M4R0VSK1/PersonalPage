@@ -1,671 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio Luiz Eduardo Kamarovski</title>
 
-  <!--
-    - favicon
-  -->
+  <!-- SEO Meta Tags -->
+  <title>Luiz E. Kamarovski | Desenvolvedor de Software</title>
+  <meta name="description" content="Portfólio de Luiz Eduardo Kamarovski, um desenvolvedor de software e entusiasta de tecnologia com foco em criar soluções web inovadoras e performáticas.">
+  <meta name="keywords" content="Desenvolvedor, Software, Engenheiro de Software, Portfólio, Web, C#, Java, Python, Front-end, Back-end">
+  <meta name="author" content="Luiz Eduardo Kamarovski">
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="./assets/images/FavIco.png" type="image/x-icon">
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- IonIcons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
 
+  <!-- Fundo Animado (Opcional) -->
+  <div id="particles-js"></div>
+
+  <!-- Cabeçalho e Navegação -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="#hero" class="nav-logo">L.E.K.</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#about" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="#portfolio" class="nav-link">Portfólio</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link">Carreira</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contato</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
   <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/LuizTerno.jpeg" alt="Luiz Eduardo Kamarovski" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Luiz Eduardo Kamarovski">Luiz Eduardo Kamarovski</h1>
-
-          <p class="title">Desenvolvedor Junior</p>
+    <!-- Seção Hero (Introdução) -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Luiz Eduardo Kamarovski</h1>
+        <p class="hero-subtitle"><span class="typewriter"></span></p>
+        <div class="hero-socials">
+          <a href="https://github.com/LU1ZK4M4R0VSK1" target="_blank" class="social-link"><ion-icon name="logo-github"></ion-icon></a>
+          <a href="https://www.linkedin.com/in/luiz-eduardo-kamarovski-b1b6182a7" target="_blank" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <a href="https://www.instagram.com/luizzkama/" target="_blank" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a>
         </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Mostrar contatos</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
+        <a href="#about" class="scroll-down-link">
+          <ion-icon name="arrow-down-outline"></ion-icon>
+          <span>Role para explorar</span>
+        </a>
       </div>
+    </section>
 
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="kamarovskiwork@gmail.com" class="contact-link">kamarovskiwork@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Celular</p>
-
-              <a href="https://wa.me/5541991736878" target="_blank" class="button2">
-                +55 41 99173-6878
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Aniversário</p>
-
-              <time datetime="29/04/2006">29/04/2006</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Localidade</p>
-
-              <address>Curitiba, PR - Brasil</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/LU1ZK4M4R0VSK1" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/luiz-eduardo-kamarovski-b1b6182a7" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.instagram.com/luizzkama/" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
+    <!-- Seção Sobre Mim -->
+    <section id="about" class="content-section">
+      <h2 class="section-title" data-aos="fade-up">Sobre Mim</h2>
+      <div class="about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-image">
+          <img src="./assets/images/LuizTerno.jpeg" alt="Luiz Eduardo Kamarovski">
+        </div>
+        <div class="about-text">
+          <p>Tenho 19 anos e sou um entusiasta por tecnologia, atualmente cursando <strong>Engenharia de Software</strong> na Universidade Positivo. Minha paixão é transformar ideias complexas em soluções de software eficientes e elegantes.</p>
+          <p>Com conhecimentos em infraestrutura, redes e um foco contínuo no desenvolvimento em C#, Java e Python, busco ativamente por oportunidades que me permitam aplicar e expandir minhas habilidades em um ambiente profissional dinâmico e inovador.</p>
+        </div>
       </div>
+      <div class="services-grid" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-card">
+          <div class="service-icon"><ion-icon name="code-slash-outline"></ion-icon></div>
+          <h3 class="service-title">Desenvolvimento Web</h3>
+          <p class="service-description">Criação de sistemas web robustos e personalizados, focados em velocidade, segurança e resultados de negócio.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><ion-icon name="layers-outline"></ion-icon></div>
+          <h3 class="service-title">Engenharia de Software</h3>
+          <p class="service-description">Soluções multiplataforma eficientes em C#, aplicações enterprise com Java e automação inteligente com Python.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><ion-icon name="hardware-chip-outline"></ion-icon></div>
+          <h3 class="service-title">Hardware e Infra</h3>
+          <p class="service-description">Experiência em manutenção de equipamentos de TI, otimização de performance e formatação de dispositivos.</p>
+        </div>
+      </div>
+    </section>
 
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a href="index.html" class="navbar-link active" data-nav-link>Sobre</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="quem-sou-eu.html" class="navbar-link" data-nav-link>Quem sou eu ?</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="portfolio.html" class="navbar-link" data-nav-link>Portfolio</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="voluntariado.html" class="navbar-link" data-nav-link>Voluntariado</a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">Sobre mim</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            Tenho 19 anos e sou um entusiasta por tecnologia, atualmente cursando Engenharia de Software na Universidade Positivo. Possuo conhecimentos básicos em infraestrutura e redes, além de estar constantemente me desenvolvendo em linguagens de programação e inglês por meio de estudos e prática contínua. 
-          </p>
-
-          <p>
-            Busco oportunidades para aplicar e expandir meus conhecimentos em um ambiente profissional dinâmico e inovador.
-          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">O que estou fazendo</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+    <!-- Seção Portfólio -->
+    <section id="portfolio" class="content-section">
+      <h2 class="section-title" data-aos="fade-up">Portfólio</h2>
+      <div class="portfolio-grid">
+        <!-- Projeto 1: DTI Service -->
+        <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./assets/images/ProjectDTIService.png" alt="DTI Service">
+              <div class="card-title">DTI Service</div>
+            </div>
+            <div class="card-back">
+              <h3 class="card-back-title">DTI Service</h3>
+              <p class="card-back-description">Uma aplicação de desktop para otimizar o fluxo de trabalho de TI, incluindo automações e gerenciamento de chamados.</p>
+              <div class="card-links">
+                <a href="https://github.com/LU1ZK4M4R0VSK1/DTI-Service" target="_blank" class="card-link">Ver Código <ion-icon name="logo-github"></ion-icon></a>
+                <a href="./dtiservice_details.html" class="card-link">Ver Detalhes <ion-icon name="arrow-forward-outline"></ion-icon></a>
               </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
-
-                <p class="service-item-text">
-                  Criação visual inovadora e estratégica, transformando ideias em experiências digitais memoráveis.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Desenvolvimento Web</h4>
-
-                <p class="service-item-text">
-                  Sistemas web robustos e personalizados, feitos para entregar velocidade, segurança e resultados.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/IconDev.png" alt="dev icon" width="40">
-                
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Desenvolvimento</h4>
-
-                <p class="service-item-text">
-                  Engenharia de software multiplataforma: sistemas eficientes em C#, aplicações Java enterprise e soluções em Python para automação e IA.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/IconComputer.png" alt="dev icon" width="40">
-                
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Hardware</h4>
-
-                <p class="service-item-text">
-                  Experiência com manutenção de equipamentos de TI, otimização e formatação de dispositivos.
-                </p>
-              </div>
-
-            </li>
-            
-          </ul>
-
-        </section>
-
-
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Empresas em que trabalhei</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <div class="voluntariado-item">
-                <div class="voluntariado-image">
-                  <img src="./assets/images/IconItambe.png" alt="Itambe logo">
-                </div>
-                <div class="voluntariado-text">
-                  <p>Fiz parte do time de suporte de TI, no qual estive presente no desenvolvimento de software de automações de processos em Python, documentação de projetos, manutenção de computadores e equipamentos de infra, formatação de computadores.</p>
-                </div>
-              </div>
-            </li>
-
-            <li class="clients-item">
-              <div class="voluntariado-item">
-                <div class="voluntariado-image">
-                  <img src="./assets/images/IconIntegrare.png" alt="Integrare logo">
-                </div>
-                <div class="voluntariado-text">
-                  <p>Em 2024 lecionei aulas de informática básica para a ONG jovem integrare, temas como Windows, estrutura de computadores e pacote Office</p>
-                </div>
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
+            </div>
           </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <article class="voluntariado" data-page="voluntariado">
-
-        <header>
-          <h2 class="h2 article-title">Trabalhos voluntários</h2>
-        </header>
-
-        <section class="clients">
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/FacLogo.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
-    </div>
-
+        </div>
+        <!-- Adicionar mais projetos aqui -->
+      </div>
+    </section>
+
+    <!-- Seção Carreira e Educação -->
+    <section id="experience" class="content-section">
+      <h2 class="section-title" data-aos="fade-up">Carreira e Educação</h2>
+      <div class="timeline" data-aos="fade-up" data-aos-delay="200">
+        <!-- Item da Timeline: Itambé -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <ion-icon name="briefcase-outline"></ion-icon>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023 - 2024</span>
+            <h3 class="timeline-title">Suporte de TI - Itambé</h3>
+            <p class="timeline-description">Desenvolvimento de automações com Python, documentação de projetos, manutenção de hardware e infraestrutura de rede.</p>
+          </div>
+        </div>
+        <!-- Item da Timeline: Universidade Positivo -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <ion-icon name="school-outline"></ion-icon>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024 - Presente</span>
+            <h3 class="timeline-title">Engenharia de Software - Universidade Positivo</h3>
+            <p class="timeline-description">Graduação com foco em metodologias ágeis, arquitetura de software e desenvolvimento full-stack.</p>
+          </div>
+        </div>
+        <!-- Item da Timeline: Voluntariado -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <ion-icon name="heart-outline"></ion-icon>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">2019 - Presente</span>
+            <h3 class="timeline-title">Trabalho Voluntário</h3>
+            <p class="timeline-description">Ensino de informática para ONGs (Jovem Integrare), aulas de ciências para EJA (Ayrton Senna) e participação em atividades da igreja (FAC, Festa do Morango).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contact" class="content-section">
+      <h2 class="section-title" data-aos="fade-up">Vamos Conversar</h2>
+      <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="100">Estou sempre aberto a novas oportunidades e colaborações. <br>Sinta-se à vontade para entrar em contato.</p>
+      <div class="contact-container" data-aos="fade-up" data-aos-delay="300">
+        <div class="contact-info">
+          <div class="contact-item">
+            <ion-icon name="mail-outline"></ion-icon>
+            <a href="mailto:kamarovskiwork@gmail.com">kamarovskiwork@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+            <a href="https://wa.me/5541991736878" target="_blank">+55 (41) 99173-6878</a>
+          </div>
+          <div class="contact-item">
+            <ion-icon name="location-outline"></ion-icon>
+            <span>Curitiba, PR - Brasil</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2024 Luiz Eduardo Kamarovski. Criado com paixão e código.</p>
+  </footer>
 
-
-
-
-
-  <!--
-    - custom js link
-  -->
+  <!-- Scripts -->
+  <!-- Biblioteca de Partículas (Opcional) -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Biblioteca de Animação de Scroll (Opcional, mas recomendado) -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Script Principal -->
   <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>

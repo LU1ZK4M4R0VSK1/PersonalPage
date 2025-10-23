@@ -1,161 +1,179 @@
-'use strict';
+document.addEventListener('DOMContentLoaded', () => {
 
+  // 1. Lógica do Menu Hamburger para mobile
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
 
-
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
-
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
   });
 
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
-
-
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select.addEventListener("click", function () { elementToggleFunc(this); });
-
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (hamburger.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
   });
-}
 
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
+  // 2. Efeito Typewriter
+  const typewriterElement = document.querySelector('.typewriter');
+  const roles = ["Desenvolvedor de Software", "Engenheiro de Software", "Entusiasta de Tecnologia"];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-const filterFunc = function (selectedValue) {
+  function type() {
+    const currentRole = roles[roleIndex];
+    let displayText = '';
 
-  for (let i = 0; i < filterItems.length; i++) {
-
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
+    if (isDeleting) {
+      displayText = currentRole.substring(0, charIndex - 1);
+      charIndex--;
     } else {
-      filterItems[i].classList.remove("active");
+      displayText = currentRole.substring(0, charIndex + 1);
+      charIndex++;
     }
 
+    typewriterElement.textContent = displayText;
+
+    let typeSpeed = isDeleting ? 100 : 200;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      typeSpeed = 2000; // Pausa no final da palavra
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      typeSpeed = 500; // Pausa antes de começar a nova palavra
+    }
+
+    setTimeout(type, typeSpeed);
   }
 
-}
+  if (typewriterElement) {
+    type();
+  }
 
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
-
-for (let i = 0; i < filterBtn.length; i++) {
-
-  filterBtn[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
-
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
-
+  // 3. Inicialização da biblioteca de animação (AOS)
+  AOS.init({
+    duration: 800, // Duração da animação
+    once: true, // Animar apenas uma vez
+    offset: 50, // Começar a animação 50px antes do elemento aparecer
   });
 
-}
+  // 4. Inicialização do Particles.js
+  if (document.getElementById('particles-js')) {
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#00bfff"
+        },
+        "shape": {
+          "type": "circle",
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true,
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00bfff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  }
 
+  // 5. Destaque do link de navegação ativo no scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
 
+  function onScroll() {
+    const scrollY = window.pageYOffset;
 
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 100; // Offset para o header
+      const sectionId = current.getAttribute('id');
 
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
-  });
-}
-
-
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
       }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+
+  // 6. Header Inteligente (esconde ao rolar para baixo, mostra ao rolar para cima)
+  let lastScrollTop = 0;
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      // Scroll para baixo
+      header.style.top = '-100px';
+    } else {
+      // Scroll para cima
+      header.style.top = '0';
     }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Para lidar com o topo da página
+  }, false);
 
-  });
-}
-
-
+});
