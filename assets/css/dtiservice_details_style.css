@@ -1,7 +1,7 @@
 /* Base styles for mobile-first approach */
 :root {
     --color-background: #1a1a1a; /* Dark background */
-    --color-primary: #ffd700; /* Gold/Yellow for primary elements */
+    --color-primary: #00bfff; /* Gold/Yellow for primary elements */
     --color-text: #f0f0f0; /* Light text */
     --color-card-bg: #2a2a2a; /* Slightly lighter dark for cards */
     --color-border: #444444; /* Darker border */
@@ -183,4 +183,201 @@ header {
         max-width: 80%;
         max-height: 90%;
     }
+}
+
+/*---------------------------------------------------------------
+# RESPONSIVIDADE
+---------------------------------------------------------------*/
+
+/* Ajustes para telas menores que 1024px (tablets e mobile) */
+@media (max-width: 1024px) {
+  .content-section {
+    padding: 4rem 1.5rem; /* Reduzir padding lateral */
+  }
+
+  .project-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* Ajustar tamanho do título do projeto */
+  }
+
+  .project-subtitle {
+    font-size: clamp(1rem, 3.5vw, 1.5rem); /* Ajustar tamanho do subtítulo do projeto */
+    max-width: 90%;
+  }
+
+  .summary-container {
+    flex-direction: column; /* Empilhar em telas menores */
+    text-align: center;
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+
+  .summary-icon {
+    font-size: 4.5rem;
+  }
+
+  .section-title-small {
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Ajustar tamanho do título da seção pequena */
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajustar grid de features */
+  }
+
+  .feature-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+  }
+
+  .feature-title {
+    font-size: 1.3rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-top: -2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .code-editor-container {
+    max-width: 95%; /* Usar mais largura disponível */
+  }
+
+  .code-editor-header {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .code-editor-header .title {
+    font-size: 0.8rem;
+  }
+
+  .copy-button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .code-editor-body {
+    padding: 1rem;
+  }
+
+  .code-editor-body code {
+    font-size: 0.9rem; /* Reduzir tamanho da fonte do código */
+  }
+}
+
+/* Ajustes específicos para telas menores que 768px (mobile) */
+@media (max-width: 768px) {
+  .project-hero-section {
+    height: 60vh; /* Reduzir altura do hero em mobile */
+  }
+
+  .project-links {
+    flex-direction: column; /* Empilhar botões */
+    gap: 0.8rem;
+  }
+
+  .project-links .card-link {
+    width: 80%; /* Ocupar mais largura */
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .summary-container {
+    padding: 1.5rem;
+  }
+
+  .summary-icon {
+    font-size: 3.5rem;
+  }
+
+  .summary-text p {
+    font-size: 1rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr; /* Uma coluna para features em mobile */
+  }
+
+  .section-subtitle {
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  .code-editor-container {
+    max-width: 100%; /* Ocupar largura total */
+    border-radius: 0; /* Remover border-radius nas bordas da tela */
+  }
+
+  .code-editor-header {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .code-editor-body {
+    padding: 0.8rem;
+  }
+
+  .code-editor-body pre {
+    white-space: pre-wrap; /* Quebrar linhas longas */
+    word-wrap: break-word;
+  }
+
+  .code-editor-body code {
+    font-size: 0.85rem;
+  }
+}
+
+/* Ajustes para telas muito pequenas (ex: 320px) */
+@media (max-width: 480px) {
+  .content-section {
+    padding: 3rem 1rem;
+  }
+
+  .project-title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  .project-subtitle {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  }
+
+  .project-links .card-link {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .summary-container {
+    padding: 1rem;
+  }
+
+  .summary-icon {
+    font-size: 3rem;
+  }
+
+  .section-title-small {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+  }
+
+  .feature-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+
+  .feature-title {
+    font-size: 1.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .code-editor-body code {
+    font-size: 0.8rem;
+  }
 }

@@ -1,143 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DTI Service Details</title>
-    <link rel="stylesheet" href="./assets/css/dtiservice_details_style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>DTI Service - Detalhes do Projeto | Luiz E. Kamarovski</title>
+  <meta name="description" content="Explore os detalhes do DTI Service, um sistema de automação de TI desenvolvido por Luiz Eduardo Kamarovski.">
+  <meta name="keywords" content="DTI Service, Automação, TI, PowerShell, C#, Portfólio, Luiz Kamarovski">
+  <meta name="author" content="Luiz Eduardo Kamarovski">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/images/FavIco.png" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Details Page Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/dtiservice_details_style.css">
+
+  <!-- IonIcons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <a href="https://github.com/LU1ZK4M4R0VSK1/DTI-Service" target="_blank" class="github-link">DTI Service no Git</a>
-        </header>
-        <main>
-            <div class="gallery">
-                <img src="./assets/images/MainDTIService.png" alt="Main DTI Service" class="screenshot">
-                <img src="./assets/images/ImpressorasDTIService.png" alt="Impressoras DTI Service" class="screenshot">
-                <img src="./assets/images/OtimizacoesDTIService.png" alt="Otimizações DTI Service" class="screenshot">
-                <img src="./assets/images/NovoChamadoDTIService.png" alt="Novo Chamado DTI Service" class="screenshot">
-                <img src="./assets/images/AdicionarScript.png" alt="Adicionar Script DTI Service" class="screenshot">
-                <img src="./assets/images/VerGruposDTIService.png" alt="Ver Grupos DTI Service" class="screenshot">
-            </div>
-        </main>
-    </div>
 
-    <!-- The Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <span class="close-button">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <a class="prev-button">&#10094;</a>
-        <a class="next-button">&#10095;</a>
-    </div>
+  <!-- Fundo Animado -->
+  <div id="particles-js"></div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const galleryImages = document.querySelectorAll('.screenshot');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const closeButton = document.querySelector('.close-button');
-            const prevButton = document.querySelector('.prev-button');
-            const nextButton = document.querySelector('.next-button');
-            let currentImageIndex = 0;
-            let isZoomed = false;
-            let startX, startY, imgX, imgY;
+  <!-- Cabeçalho e Navegação -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">L.E.K.</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html#about" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="index.html#portfolio" class="nav-link">Portfólio</a></li>
+        <li class="nav-item"><a href="index.html#experience" class="nav-link">Carreira</a></li>
+        <li class="nav-item"><a href="index.html#contact" class="nav-link">Contato</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
 
-            function openLightbox(index) {
-                lightbox.style.display = 'flex'; // Use flex for centering
-                currentImageIndex = index;
-                lightboxImg.src = galleryImages[currentImageIndex].src;
-                resetZoom();
-            }
+  <main>
+    <!-- Seção Hero do Projeto -->
+    <section id="project-hero" class="project-hero-section">
+      <div class="hero-content">
+        <h1 class="project-title" data-aos="fade-down">DTI Service</h1>
+        <p class="project-subtitle" data-aos="fade-down" data-aos-delay="200">Uma solução de automação para otimizar processos de TI e suporte técnico.</p>
+        <div class="project-links" data-aos="fade-up" data-aos-delay="400">
+          <a href="https://github.com/LU1ZK4M4R0VSK1/DTI-Service" target="_blank" class="card-link">
+            <ion-icon name="logo-github"></ion-icon>
+            Ver Código
+          </a>
+          <a href="#summary" class="card-link secondary">
+            <ion-icon name="arrow-down-outline"></ion-icon>
+            Saber Mais
+          </a>
+        </div>
+      </div>
+      <div class="hero-background-image" style="background-image: url('./assets/images/MainDTIService.png');"></div>
+    </section>
 
-            function closeLightbox() {
-                lightbox.style.display = 'none';
-                resetZoom();
-            }
+    <!-- Resumo do Software -->
+    <section id="summary" class="content-section">
+      <div class="summary-container" data-aos="fade-up">
+        <div class="summary-icon">
+          <ion-icon name="hardware-chip-outline"></ion-icon>
+        </div>
+        <div class="summary-text">
+          <h2 class="section-title-small">O Que é o DTI Service?</h2>
+          <p>O DTI Service é um <strong>sistema interno de automação</strong>, desenvolvido para agilizar e padronizar as operações da equipe de TI. A ferramenta centraliza funcionalidades críticas, desde a configuração de novas máquinas até a execução de scripts de manutenção, reduzindo o tempo gasto em tarefas repetitivas e minimizando a chance de erros manuais.</p>
+        </div>
+      </div>
+    </section>
 
-            function showNextImage() {
-                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-                lightboxImg.src = galleryImages[currentImageIndex].src;
-                resetZoom();
-            }
+    <!-- Funcionalidades Principais -->
+    <section id="features" class="content-section">
+      <h2 class="section-title" data-aos="fade-up">Funcionalidades Principais</h2>
+      <div class="features-grid">
+        <!-- Card 1: Automação de Instalações -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon"><ion-icon name="build-outline"></ion-icon></div>
+          <h3 class="feature-title">Setup Automatizado</h3>
+          <p class="feature-description">Instala e configura softwares essenciais com um único clique, garantindo a padronização dos ambientes de trabalho.</p>
+        </div>
+        <!-- Card 2: Otimização de Sistema -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon"><ion-icon name="rocket-outline"></ion-icon></div>
+          <h3 class="feature-title">Otimização de Sistema</h3>
+          <p class="feature-description">Executa rotinas de limpeza e otimização para melhorar a performance e a segurança dos computadores.</p>
+        </div>
+        <!-- Card 3: Instalação de Impressoras -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon"><ion-icon name="print-outline"></ion-icon></div>
+          <h3 class="feature-title">Gerenciamento de Impressoras</h3>
+          <p class="feature-description">Mapeia e instala impressoras de rede automaticamente, com base na localização do usuário.</p>
+        </div>
+        <!-- Card 4: Informações da Máquina -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon"><ion-icon name="desktop-outline"></ion-icon></div>
+          <h3 class="feature-title">Diagnóstico Rápido</h3>
+          <p class="feature-description">Coleta e exibe informações detalhadas do hardware e software da máquina para um suporte mais ágil.</p>
+        </div>
+        <!-- Card 5: Grupos do Active Directory -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon"><ion-icon name="people-outline"></ion-icon></div>
+          <h3 class="feature-title">Consulta ao Active Directory</h3>
+          <p class="feature-description">Verifica os grupos de permissão do usuário e do computador no AD para facilitar a gestão de acessos.</p>
+        </div>
+        <!-- Card 6: Abertura de Chamados -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon"><ion-icon name="ticket-outline"></ion-icon></div>
+          <h3 class="feature-title">Abertura de Chamados</h3>
+          <p class="feature-description">Automatiza a criação de tickets de suporte, pré-preenchendo informações essenciais para a equipe de TI.</p>
+        </div>
+      </div>
+    </section>
 
-            function showPrevImage() {
-                currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-                lightboxImg.src = galleryImages[currentImageIndex].src;
-                resetZoom();
-            }
+    <!-- Sessão de Scripts PowerShell -->
+    <section id="powershell-scripts" class="content-section">
+      <h2 class="section-title" data-aos="fade-up">Scripts Personalizados</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        O DTI Service permite a integração de scripts PowerShell customizados, tornando a ferramenta flexível para qualquer necessidade.
+      </p>
+      <div class="code-editor-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="code-editor-header">
+          <div class="buttons">
+            <span class="dot" style="background:#ff5f56;"></span>
+            <span class="dot" style="background:#ffbd2e;"></span>
+            <span class="dot" style="background:#27c93f;"></span>
+          </div>
+          <div class="title">
+            <span>AdicionarScript.ps1</span>
+          </div>
+          <div class="copy-button-wrapper">
+            <button class="copy-button" onclick="copyCode()">
+              <ion-icon name="copy-outline"></ion-icon>
+              <span id="copy-text">Copiar</span>
+            </button>
+          </div>
+        </div>
+        <div class="code-editor-body">
+          <pre><code id="code-block" class="language-powershell">
+# Exemplo de Script PowerShell para Limpeza de Arquivos Temporários
 
-            function resetZoom() {
-                isZoomed = false;
-                lightboxImg.style.transform = 'scale(1) translate(0, 0)';
-                lightboxImg.style.cursor = 'zoom-in';
-            }
+# Define o caminho da pasta de arquivos temporários do usuário
+$tempPath = "$env:USERPROFILE\AppData\Local\Temp"
 
-            galleryImages.forEach((img, index) => {
-                img.addEventListener('click', () => openLightbox(index));
-            });
+# Verifica se o diretório existe
+if (Test-Path $tempPath) {
+    Write-Host "Limpando arquivos em: $tempPath"
+    
+    # Remove os itens recursivamente e com força
+    Get-ChildItem -Path $tempPath -Recurse -Force | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+    
+    Write-Host "Limpeza de arquivos temporários concluída."
+} else {
+    Write-Host "Diretório de arquivos temporários não encontrado."
+}
+          </code></pre>
+        </div>
+      </div>
+    </section>
 
-            closeButton.addEventListener('click', closeLightbox);
-            prevButton.addEventListener('click', showPrevImage);
-            nextButton.addEventListener('click', showNextImage);
+  </main>
 
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2024 Luiz Eduardo Kamarovski. Criado com paixão e código.</p>
+  </footer>
 
-            // Zoom functionality
-            lightboxImg.addEventListener('click', (e) => {
-                if (!isZoomed) {
-                    isZoomed = true;
-                    lightboxImg.style.transform = 'scale(2)'; // Zoom in by 2x
-                    lightboxImg.style.cursor = 'grab';
-                } else {
-                    resetZoom();
-                }
-            });
-
-            // Panning functionality (only when zoomed)
-            lightboxImg.addEventListener('mousedown', (e) => {
-                if (isZoomed) {
-                    e.preventDefault();
-                    startX = e.clientX;
-                    startY = e.clientY;
-                    const transform = window.getComputedStyle(lightboxImg).transform;
-                    const matrix = new DOMMatrix(transform);
-                    imgX = matrix.m41;
-                    imgY = matrix.m42;
-
-                    const onMouseMove = (e) => {
-                        const dx = e.clientX - startX;
-                        const dy = e.clientY - startY;
-                        lightboxImg.style.transform = `scale(2) translate(${imgX + dx}px, ${imgY + dy}px)`;
-                    };
-
-                    const onMouseUp = () => {
-                        lightboxImg.removeEventListener('mousemove', onMouseMove);
-                        lightboxImg.removeEventListener('mouseup', onMouseUp);
-                    };
-
-                    lightboxImg.addEventListener('mousemove', onMouseMove);
-                    lightboxImg.addEventListener('mouseup', onMouseUp);
-                }
-            });
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (lightbox.style.display === 'flex') {
-                    if (e.key === 'ArrowRight') {
-                        showNextImage();
-                    } else if (e.key === 'ArrowLeft') {
-                        showPrevImage();
-                    } else if (e.key === 'Escape') {
-                        closeLightbox();
-                    }
-                }
-            });
-        });
-    </script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    // Função para copiar o código
+    function copyCode() {
+      const code = document.getElementById('code-block').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const copyText = document.getElementById('copy-text');
+        copyText.innerText = 'Copiado!';
+        setTimeout(() => {
+          copyText.innerText = 'Copiar';
+        }, 2000);
+      });
+    }
+  </script>
 </body>
+
 </html>

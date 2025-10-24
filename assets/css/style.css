@@ -585,9 +585,17 @@ ul {
 /*---------------------------------------------------------------
 # RESPONSIVIDADE
 ---------------------------------------------------------------*/
-@media (max-width: 992px) {
+/*---------------------------------------------------------------
+# RESPONSIVIDADE
+---------------------------------------------------------------*/
+/* Ajustes para telas menores que 1024px (tablets e mobile) */
+@media (max-width: 1024px) {
+  .content-section {
+    padding: 4rem 1.5rem;
+  }
+
   .about-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Empilhar sobre a seção em tablets */
     text-align: center;
   }
 
@@ -596,29 +604,77 @@ ul {
     max-width: 300px;
   }
 
+  /* Timeline: Ajustes para telas maiores que mobile, mas menores que desktop */
   .timeline::after {
-    left: 20px;
+    left: 50%; /* Manter a linha centralizada */
+    margin-left: -1.5px;
   }
 
   .timeline-item {
-    width: 100%;
-    padding-left: 50px;
-    padding-right: 1rem;
+    width: 50%;
+    padding: 1rem 2.5rem;
   }
 
-  .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+  .timeline-item:nth-child(odd) {
     left: 0;
   }
 
+  .timeline-item:nth-child(even) {
+    left: 50%;
+  }
+
   .timeline-item::after {
-    left: 10px;
+    right: -10px; /* Alinhar o círculo à direita */
+    left: auto;
+  }
+
+  .timeline-item:nth-child(even)::after {
+    left: -10px; /* Alinhar o círculo à esquerda para itens pares */
+    right: auto;
   }
 
   .timeline-icon {
-    left: -10px;
+    right: -40px; /* Alinhar o ícone à direita */
+    left: auto;
+  }
+
+  .timeline-item:nth-child(even) .timeline-icon {
+    left: -40px; /* Alinhar o ícone à esquerda para itens pares */
+    right: auto;
+  }
+
+  /* Portfólio: Ajustes para cards em tablets */
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustar grid para tablets */
+  }
+
+  .portfolio-card {
+    aspect-ratio: 4 / 3; /* Ajustar proporção para tablets */
+  }
+
+  .card-back {
+    padding: 1.5rem; /* Reduzir padding */
+  }
+
+  .card-back-description {
+    font-size: 0.85rem;
+  }
+
+  .card-links {
+    flex-direction: column; /* Empilhar botões em tablets */
+    gap: 0.8rem;
+  }
+
+  .card-link {
+    width: 80%; /* Ocupar mais largura */
+    margin: 0 auto;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
   }
 }
 
+/* Ajustes específicos para telas menores que 768px (mobile) */
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
@@ -657,4 +713,142 @@ ul {
   .content-section {
     padding: 4rem 1rem;
   }
+
+  /* Timeline para Mobile */
+  .timeline {
+    max-width: 100%;
+  }
+
+  .timeline::after {
+    left: 20px; /* Mover a linha central para a esquerda */
+  }
+
+  .timeline-item {
+    width: 100%; /* Ocupar largura total */
+    padding-left: 50px; /* Espaço para a linha e o ícone/círculo */
+    padding-right: 1rem;
+    left: 0 !important; /* Forçar alinhamento à esquerda */
+  }
+
+  .timeline-item::after {
+    left: 10px; /* Alinhar o círculo com a linha */
+    right: auto;
+  }
+
+  .timeline-item:nth-child(even)::after {
+    left: 10px; /* Alinhar o círculo com a linha para itens pares também */
+  }
+
+  .timeline-icon {
+    left: -10px; /* Mover o ícone para perto da linha */
+    right: auto;
+    top: 22px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-icon {
+    left: -10px; /* Alinhar ícone de itens pares também */
+  }
+
+  .timeline-content {
+    text-align: left; /* Alinhar o texto à esquerda */
+  }
+
+  .contact-container {
+    padding: 2rem 1rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Portfólio: Ajustes para cards em mobile */
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Uma coluna para mobile */
+  }
+
+  .portfolio-card {
+    aspect-ratio: 16 / 12; /* Aumentar um pouco a altura para mobile */
+  }
+
+  .card-back {
+    padding: 1.5rem; /* Manter padding */
+  }
+
+  .card-back-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-links {
+    flex-direction: row; /* Manter botões lado a lado se houver espaço */
+    flex-wrap: wrap; /* Quebrar se não houver espaço */
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .card-link {
+    width: auto; /* Deixar a largura ser definida pelo conteúdo */
+    max-width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Ajustes para telas muito pequenas (ex: 320px) */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+  }
+
+  .contact-item ion-icon {
+    font-size: 1.5rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+  }
+
+  .card-back-title {
+    font-size: 1.3rem;
+  }
+
+  .portfolio-card {
+    aspect-ratio: 16 / 14; /* Ajustar ainda mais a altura para telas muito pequenas */
+  }
+
+  .card-back-description {
+    font-size: 0.8rem;
+  }
+
+  .card-link {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* Ensure horizontal scrolling for pre/code blocks if necessary */
+pre,
+code {
+  word-wrap: normal;
+  white-space: pre;
+  overflow-x: auto;
 }

@@ -176,4 +176,32 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Para lidar com o topo da página
   }, false);
 
+  // 7. Syntax Highlighting para o bloco de código
+  function highlightSyntax() {
+    const codeBlock = document.getElementById('code-block');
+    if (codeBlock) {
+      let code = codeBlock.innerHTML.trim();
+
+      // Expressões regulares para os tokens
+      const patterns = {
+        comment: /(#.*)/g,
+        string: /(&quot;.*&quot;)/g,
+        variable: /($[a-zA-Z_][a-zA-Z0-9_]*)/g,
+        keyword: /\b(if|else|switch|for|while|do|return|function|Get-ChildItem|Remove-Item|Test-Path|Write-Host)\b/g,
+        function: /([a-zA-Z_][a-zA-Z0-9_]*)(?=\s*\()/g
+      };
+
+      // Aplicar as classes de token
+      code = code.replace(patterns.comment, '<span class="token comment">$1</span>');
+      code = code.replace(patterns.string, '<span class="token string">$1</span>');
+      code = code.replace(patterns.variable, '<span class="token variable">$1</span>');
+      code = code.replace(patterns.keyword, '<span class="token keyword">$1</span>');
+      // code = code.replace(patterns.function, '<span class="token function">$1</span>');
+
+      codeBlock.innerHTML = code;
+    }
+  }
+
+  highlightSyntax();
+
 });
