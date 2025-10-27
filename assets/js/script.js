@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Efeito Typewriter
   const typewriterElement = document.querySelector('.typewriter');
-  const roles = ["Desenvolvedor de Software", "Engenheiro de Software", "Entusiasta de Tecnologia"];
+  const roles = ["Desenvolvedor de Software", "Soluções em Tecnologia"];
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
