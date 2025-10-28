@@ -1,0 +1,262 @@
+/*===============================================================
+# CSS DA PÁGINA DE DETALHES DO PROJETO
+===============================================================*/
+
+/*---------------------------------------------------------------
+# ESTILOS GERAIS
+---------------------------------------------------------------*/
+:root {
+  --color-background-dark: #1a1a1a;
+  --color-background-light: #2a2a2a;
+  --color-primary: #00bfff;
+  --color-text: #f0f0f0;
+  --color-text-muted: #a0a0a0;
+  --color-border: #444444;
+  --font-primary: 'Poppins', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: var(--color-background-dark);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  line-height: 1.7;
+}
+
+/*---------------------------------------------------------------
+# SEÇÃO HERO DO PROJETO
+---------------------------------------------------------------*/
+.project-hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(rgba(10, 10, 26, 0.85), rgba(10, 10, 26, 0.98)),
+              url('../images/MainDTIService.png') no-repeat center center/cover;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  color: var(--color-text);
+  text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+  margin-bottom: 1rem;
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.project-subtitle {
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  animation: slideInUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+  animation: slideInUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/*---------------------------------------------------------------
+# SEÇÕES DE CONTEÚDO DO PROJETO
+---------------------------------------------------------------*/
+.project-section {
+  padding: 6rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project-section:last-of-type {
+  border-bottom: none;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3rem);
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--color-primary);
+}
+
+.section-title-small {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+/*---------------------------------------------------------------
+# SEÇÃO DE RESUMO
+---------------------------------------------------------------*/
+.summary-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--color-background-light);
+  padding: 3rem;
+  border-radius: 12px;
+}
+
+.summary-icon {
+  display: none; /* Ícone será usado de outra forma */
+}
+
+.summary-text p {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+/*---------------------------------------------------------------
+# SEÇÃO DE FUNCIONALIDADES
+---------------------------------------------------------------*/
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: var(--color-background-light);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-primary);
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.feature-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-description {
+  color: var(--color-text-muted);
+}
+
+/*---------------------------------------------------------------
+# SEÇÃO DE SCRIPTS (POWERSHELL)
+---------------------------------------------------------------*/
+.code-editor-container {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+}
+
+.code-editor-header {
+  background-color: #2d2d2d;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.code-editor-header .buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.code-editor-header .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.code-editor-header .title {
+  color: var(--color-text-muted);
+  font-family: 'Fira Code', monospace;
+}
+
+.copy-button {
+  background: var(--color-primary);
+  color: var(--color-background-dark);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #00a0cc;
+}
+
+.code-editor-body {
+  padding: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  overflow-x: auto;
+}
+
+/*---------------------------------------------------------------
+# ANIMAÇÕES
+---------------------------------------------------------------*/
+@keyframes slideInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/*---------------------------------------------------------------
+# RESPONSIVIDADE
+---------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .project-hero-section {
+    padding-top: 6rem; /* Garante espaço para o header fixo */
+    min-height: auto;
+  }
+
+  .project-links {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .project-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .summary-container {
+    padding: 2rem;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
