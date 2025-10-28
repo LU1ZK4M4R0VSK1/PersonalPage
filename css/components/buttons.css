@@ -1,0 +1,64 @@
+/*---------------------------------------------------------------
+# ESTILOS DE BOTÃO
+---------------------------------------------------------------*/
+
+.card-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.card-link:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+/*---------------------------------------------------------------
+# RESPONSIVIDADE DOS BOTÕES
+---------------------------------------------------------------*/
+@media (max-width: 1024px) {
+  .card-links {
+    flex-direction: column; /* Empilhar botões em tablets */
+    gap: 0.8rem;
+  }
+
+  .card-link {
+    width: 80%; /* Ocupar mais largura */
+    margin: 0 auto;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-links {
+    flex-direction: row; /* Manter botões lado a lado se houver espaço */
+    flex-wrap: wrap; /* Quebrar se não houver espaço */
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .card-link {
+    width: auto; /* Deixar a largura ser definida pelo conteúdo */
+    max-width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-link {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+}

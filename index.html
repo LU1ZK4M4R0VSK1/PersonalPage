@@ -11,20 +11,43 @@
   <meta name="keywords" content="Desenvolvedor, Software, Engenheiro de Software, Portfólio, Web, C#, Java, Python, Front-end, Back-end">
   <meta name="author" content="Luiz Eduardo Kamarovski">
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lu1zk4m4r0vsk1.github.io/PersonalPage/">
+  <meta property="og:title" content="Luiz E. Kamarovski | Desenvolvedor de Software">
+  <meta property="og:description" content="Portfólio de Luiz Eduardo Kamarovski, desenvolvedor focado em criar soluções web inovadoras.">
+  <meta property="og:image" content="https://lu1zk4m4r0vsk1.github.io/PersonalPage/assets/images/LuizTerno.jpeg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://lu1zk4m4r0vsk1.github.io/PersonalPage/">
+  <meta property="twitter:title" content="Luiz E. Kamarovski | Desenvolvedor de Software">
+  <meta property="twitter:description" content="Portfólio de Luiz Eduardo Kamarovski, desenvolvedor focado em criar soluções web inovadoras.">
+  <meta property="twitter:image" content="https://lu1zk4m4r0vsk1.github.io/PersonalPage/assets/images/LuizTerno.jpeg">
+
   <!-- Favicon -->
   <link rel="shortcut icon" href="./assets/images/FavIco.png" type="image/x-icon">
 
-  <!-- Google Fonts -->
+  <!-- Preload Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/orbitron/v35/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1ny_Cmxpg.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8V1s.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJA.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <!-- Google Fonts Stylesheet -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="css/main.css">
 
   <!-- IonIcons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 
 <body>
@@ -36,17 +59,17 @@
   <header class="header">
     <nav class="navbar">
       <a href="#hero" class="nav-logo">L.E.K.</a>
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="nav-menu">
         <li class="nav-item"><a href="#about" class="nav-link">Sobre</a></li>
         <li class="nav-item"><a href="#portfolio" class="nav-link">Portfólio</a></li>
         <li class="nav-item"><a href="#experience" class="nav-link">Carreira</a></li>
         <li class="nav-item"><a href="#contact" class="nav-link">Contato</a></li>
       </ul>
-      <div class="hamburger">
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
-      </div>
+      </button>
     </nav>
   </header>
 
@@ -57,9 +80,9 @@
         <h1 class="hero-title">Luiz Eduardo Kamarovski</h1>
         <p class="hero-subtitle"><span class="typewriter"></span></p>
         <div class="hero-socials">
-          <a href="https://github.com/LU1ZK4M4R0VSK1" target="_blank" class="social-link"><ion-icon name="logo-github"></ion-icon></a>
-          <a href="https://www.linkedin.com/in/luiz-eduardo-kamarovski-b1b6182a7" target="_blank" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a>
-          <a href="https://www.instagram.com/luizzkama/" target="_blank" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="https://github.com/LU1ZK4M4R0VSK1" target="_blank" class="social-link" aria-label="Visitar perfil no GitHub"><ion-icon name="logo-github"></ion-icon></a>
+          <a href="https://www.linkedin.com/in/luiz-eduardo-kamarovski-b1b6182a7" target="_blank" class="social-link" aria-label="Visitar perfil no LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <a href="https://www.instagram.com/luizzkama/" target="_blank" class="social-link" aria-label="Visitar perfil no Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
         </div>
         <a href="#about" class="scroll-down-link">
           <ion-icon name="arrow-down-outline"></ion-icon>
@@ -70,10 +93,10 @@
 
     <!-- Seção Sobre Mim -->
     <section id="about" class="content-section">
-      <h2 class="section-title" data-aos="fade-up">Sobre Mim</h2>
-      <div class="about-container" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="section-title scroll-animate">Sobre Mim</h2>
+      <div class="about-container scroll-animate">
         <div class="about-image">
-          <img src="./assets/images/LuizTerno.jpeg" alt="Luiz Eduardo Kamarovski">
+          <img src="./assets/images/LuizTerno.jpeg" alt="Luiz Eduardo Kamarovski" loading="lazy">
         </div>
           <div class="about-text">
             <p>
@@ -86,7 +109,7 @@
             </p>
           </div>
       </div>
-      <div class="services-grid" data-aos="fade-up" data-aos-delay="400">
+      <div class="services-grid scroll-animate">
         <div class="service-card">
           <div class="service-icon"><ion-icon name="code-slash-outline"></ion-icon></div>
           <h3 class="service-title">Desenvolvimento Web</h3>
@@ -115,13 +138,13 @@
 
     <!-- Seção Portfólio -->
     <section id="portfolio" class="content-section">
-      <h2 class="section-title" data-aos="fade-up">Portfólio</h2>
+      <h2 class="section-title scroll-animate">Portfólio</h2>
       <div class="portfolio-grid">
         <!-- Projeto 1: DTI Service -->
-        <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="portfolio-card scroll-animate">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./assets/images/ProjectDTIService.png" alt="DTI Service">
+              <img src="./assets/images/ProjectDTIService.png" alt="DTI Service" loading="lazy">
               <div class="card-title">DTI Service</div>
             </div>
             <div class="card-back">
@@ -140,8 +163,8 @@
 
     <!-- Seção Carreira e Educação -->
     <section id="experience" class="content-section">
-      <h2 class="section-title" data-aos="fade-up">Carreira e Educação</h2>
-      <div class="timeline" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="section-title scroll-animate">Carreira e Educação</h2>
+      <div class="timeline scroll-animate">
         <!-- Item da Timeline: Itambé -->
         <div class="timeline-item">
           <div class="timeline-icon">
@@ -163,7 +186,7 @@
             <h3 class="timeline-title">Engenharia de Software - Universidade Positivo</h3>
             <p class="timeline-description">Graduação com foco em metodologias ágeis, arquitetura de software e desenvolvimento full-stack.</p>
           </div>
-        </div>
+          </div>
         <!-- Item da Timeline: Voluntariado -->
         <div class="timeline-item">
           <div class="timeline-icon">
@@ -180,9 +203,9 @@
 
     <!-- Seção Contato -->
     <section id="contact" class="content-section">
-      <h2 class="section-title" data-aos="fade-up">Vamos Conversar</h2>
-      <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="100">Estou sempre aberto a novas oportunidades e colaborações. <br>Sinta-se à vontade para entrar em contato.</p>
-      <div class="contact-container" data-aos="fade-up" data-aos-delay="300">
+      <h2 class="section-title scroll-animate">Vamos Conversar</h2>
+      <p class="contact-subtitle scroll-animate">Estou sempre aberto a novas oportunidades e colaborações. <br>Sinta-se à vontade para entrar em contato.</p>
+      <div class="contact-container scroll-animate">
         <div class="contact-info">
           <div class="contact-item">
             <ion-icon name="mail-outline"></ion-icon>
@@ -207,12 +230,7 @@
   </footer>
 
   <!-- Scripts -->
-  <!-- Biblioteca de Partículas (Opcional) -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <!-- Biblioteca de Animação de Scroll (Opcional, mas recomendado) -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <!-- Script Principal -->
-  <script src="./assets/js/script.js"></script>
+  <script src="js/main.js" type="module" defer></script>
 </body>
 
 </html>

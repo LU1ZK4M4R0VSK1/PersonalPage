@@ -1,0 +1,51 @@
+/*---------------------------------------------------------------
+# SEÇÃO SOBRE
+---------------------------------------------------------------*/
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  border-radius: 10px;
+  border: 2px solid var(--color-border);
+  box-shadow: 0 0 20px var(--color-border);
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.about-text strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/*---------------------------------------------------------------
+# RESPONSIVIDADE DA SEÇÃO SOBRE
+---------------------------------------------------------------*/
+@media (max-width: 1024px) {
+  .about-container {
+    grid-template-columns: 1fr; /* Empilhar sobre a seção em tablets */
+    text-align: center;
+  }
+
+  .about-image {
+    margin: 0 auto 2rem auto;
+    max-width: 300px;
+  }
+}

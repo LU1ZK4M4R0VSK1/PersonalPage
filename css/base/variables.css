@@ -1,0 +1,21 @@
+:root {
+  /* Cores */
+  --color-background: #0a0a1a; /* Um azul muito escuro, quase preto */
+  --color-surface: #1a1a2e;    /* Superfície para cards e seções */
+  --color-primary: #00bfff;    /* Azul elétrico (Deep Sky Blue) */
+  --color-secondary: #9f70fd;  /* Um toque de roxo neon */
+  --color-text: #e0e0e0;       /* Texto principal, um cinza claro */
+  --color-text-muted: #a0a0a0; /* Texto secundário */
+  --color-border: rgba(0, 191, 255, 0.2); /* Borda com a cor primária e alfa */
+
+  /* Tipografia */
+  --font-primary: 'Poppins', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+
+  /* Espaçamento */
+  --spacing-unit: 1rem;
+
+  /* Transições */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-smooth: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

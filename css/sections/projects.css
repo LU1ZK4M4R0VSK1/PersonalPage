@@ -1,0 +1,23 @@
+/*---------------------------------------------------------------
+# SEÇÃO PORTFÓLIO (PROJETOS)
+---------------------------------------------------------------*/
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/*---------------------------------------------------------------
+# RESPONSIVIDADE DA SEÇÃO DE PROJETOS
+---------------------------------------------------------------*/
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustar grid para tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Uma coluna para mobile */
+  }
+}
